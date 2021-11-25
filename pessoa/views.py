@@ -8,11 +8,12 @@ class ListaPessoaView(ListView):
     queryset = Pessoa.objects.all().order_by('nome_completo')
 
     def get_queryset(self):
-        queryset = super().get_queryset
+        queryset = super().get_queryset()
         filtro_nome = self.request.GET.get('nome') or None
-
+        
         if filtro_nome:
-            queryset = queryset.filter(nome_completo_contains=filtro_nome)
+            queryset = queryset.filter(nome_completo__contains=filtro_nome)
+
         return queryset
 
 
