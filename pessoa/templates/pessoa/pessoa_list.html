@@ -1,11 +1,14 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+
 <form method="GET">
   <input type="text" name="nome" placeholder="Buscar por nome" />
   <input type="submit" value="Buscar"/>
 </form>
+
 <a href="{% url 'pessoa.novo' %}">Novo</a>
+
 <table>
   <thead>
     <tr>
